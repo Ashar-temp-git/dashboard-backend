@@ -1,12 +1,14 @@
 {
-	"name": "backend",
+	"name": "sales-dashboard-backend",
 	"version": "1.0.0",
-	"description": "Serverless backend for Vercel",
+	"description": "Serverless backend for Sales Dashboard - Optimized for Vercel",
 	"main": "api/index.js",
 	"scripts": {
-		"dev": "vercel dev",
-		"start": "node api/index.js",
-		"build": "echo 'Build complete'"
+		"dev": "node local-server.js",
+		"vercel-dev": "vercel dev",
+		"start": "node local-server.js",
+		"build": "echo 'Build complete'",
+		"lint": "echo 'No linting configured'"
 	},
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
@@ -21,6 +23,14 @@
 		"vercel": "^33.0.0"
 	},
 	"engines": {
-		"node": "24.x"
-	}
+		"node": "20.x"
+	},
+	"keywords": [
+		"api",
+		"serverless",
+		"vercel",
+		"express",
+		"mongodb"
+	],
+	"license": "MIT"
 }
