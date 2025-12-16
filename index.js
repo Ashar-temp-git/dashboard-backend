@@ -55,21 +55,23 @@ async function dbConnect() {
 // ============================================
 
 // CORS Configuration
+// CORS Configuration
 const corsOptions = {
 	origin: function (origin, callback) {
-		const allowedOrigins = [
-			"http://localhost:3000",
-			"http://localhost:5173",
-			"https://react-sales-frontend.vercel.app/",
-			process.env.FRONTEND_URL,
-		].filter(Boolean);
+		const allowedOrigins = ["http://localhost:3000", "http://localhost:5173", process.env.FRONTEND_URL]
+			.filter(Boolean)
+			.map(url => url.replace(/\/$/, "")); // Remove trailing slash from all allowed origins
 
 		// Allow requests with no origin (like mobile apps or curl requests)
 		if (!origin) return callback(null, true);
 
-		if (allowedOrigins.includes(origin) || process.env.NODE_ENV !== "production") {
+		// Normalize incoming origin just in case (though browsers usually don't send trailing slash)
+		const normalizedOrigin = origin.replace(/\/$/, "");
+
+		if (allowedOrigins.includes(normalizedOrigin) || process.env.NODE_ENV !== "production") {
 			callback(null, true);
 		} else {
+			console.log("Blocked by CORS:", origin);
 			callback(new Error("Not allowed by CORS"));
 		}
 	},
