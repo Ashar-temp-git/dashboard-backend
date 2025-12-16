@@ -7,8 +7,7 @@
 		"dev": "node local-server.js",
 		"vercel-dev": "vercel dev",
 		"start": "node local-server.js",
-		"build": "echo 'Build complete'",
-		"lint": "echo 'No linting configured'"
+		"build": "echo Build complete"
 	},
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
@@ -19,18 +18,7 @@
 		"jsonwebtoken": "^9.0.2",
 		"mongoose": "^8.0.2"
 	},
-	"devDependencies": {
-		"vercel": "^33.0.0"
-	},
 	"engines": {
-		"node": "20.x"
-	},
-	"keywords": [
-		"api",
-		"serverless",
-		"vercel",
-		"express",
-		"mongodb"
-	],
-	"license": "MIT"
+		"node": "18.x"
+	}
 }
