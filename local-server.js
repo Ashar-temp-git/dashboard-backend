@@ -1,9 +1,10 @@
 /**
  * Local Development Server
- * Use this for local development - Vercel will use api/index.js
+ * Uses the exact same application logic as Vercel
  */
 
-const app = require("./app");
+// Use the Vercel entry point
+const app = require("./api/index");
 
 const PORT = process.env.PORT || 8080;
 
