@@ -1,18 +1,16 @@
-# Serverless MERN Backend
+# Sales Dashboard API
 
-This project has been optimized for Vercel Serverless deployment.
+Merged Single-File Entry Point with Modular Logic.
 
 ## Structure
 
--    **`api/index.js`**: The Monolithic Serverless Function. Contains all Models, Controllers, Routes, and DB connection logic. This is the only file Vercel needs.
--    **`local-server.js`**: A local wrapper to run the API on your machine (`npm run dev`).
--    **`vercel.json`**: Configuration to route all requests to `api/index.js`.
+-    **`index.js`**: Main entry point. Contains DB connection, middleware, and imports all routes.
+-    **`Controllers/`, `Models/`, `Routes/`**: Modular logic used by `index.js`.
+-    **`vercel.json`**: Configured to serve `index.js` as the serverless function.
 
 ## Deployment
 
-1. **Push to GitHub** or use Vercel CLI.
-2. **Environment Variables**: Set `password` (MongoDB) and `SECRET` (JWT) in Vercel.
-3. **Deploy**:
+1. **Deploy**:
      ```bash
      vercel --prod
      ```
@@ -23,6 +21,8 @@ Run locally:
 
 ```bash
 npm run dev
+# or
+node index.js
 ```
 
 The server runs at `http://localhost:8080`.

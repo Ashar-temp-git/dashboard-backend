@@ -1,12 +1,11 @@
 {
 	"name": "sales-dashboard-backend",
 	"version": "1.0.0",
-	"description": "Serverless backend for Sales Dashboard - Optimized for Vercel",
-	"main": "api/index.js",
+	"description": "Serverless backend for Sales Dashboard",
+	"main": "index.js",
 	"scripts": {
-		"dev": "node local-server.js",
-		"vercel-dev": "vercel dev",
-		"start": "node local-server.js",
+		"dev": "node index.js",
+		"start": "node index.js",
 		"build": "echo Build complete"
 	},
 	"dependencies": {
